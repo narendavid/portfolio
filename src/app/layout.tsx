@@ -6,17 +6,14 @@ import Providers from '@/context/Providers'
 // import Navbar from '@/components/Navbar'
 import Head from 'next/head'
 import Footer from '@/components/Footer'
-import dynamic from 'next/dynamic'
+import Navbar from '@/components/Navbar'
 
-const inter = Montserrat({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
 	title: 'narendev',
 	description: 'My projects',
 }
-
-const Navbar = dynamic(() => import('@/components/Navbar'))
-
 
 export default function RootLayout({
 	children,
@@ -28,7 +25,7 @@ export default function RootLayout({
 			<Head>
 				<link rel="shortcut icon" href="" />
 			</Head>
-			<body className={inter.className}>
+			<body className={montserrat.className}>
 				<Providers>
 					<Navbar />
 					{children}
