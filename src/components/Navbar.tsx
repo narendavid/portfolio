@@ -1,5 +1,5 @@
-'use client'
-import React, { useState } from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import Moon from './icons/Moon';
 import Sun from './icons/Sun';
@@ -8,6 +8,7 @@ import Link from 'next/link';
 const Navbar = () => {
 
 	const { theme, setTheme } = useTheme()
+	const [isClient, setIsClient] = useState(false)
 
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -26,7 +27,11 @@ const Navbar = () => {
 	const themeLight = () => {
 		setTheme('light');
 	};
-	
+
+	useEffect(() => {
+		setIsClient(true)
+	}, [])
+
 	return (
 		<header>
 			<nav className="shadow-lg backdrop-blur-lg fixed w-full z-20 top-0 left-0">
@@ -37,30 +42,19 @@ const Navbar = () => {
 						</h2>
 					</Link>
 					<div className="flex md:order-2">
-						<button>
-							{
-								theme === 'dark'
-									?
-									// <Image
-									// 	src={'/sun.svg'}
-									// 	width={30}
-									// 	height={30}
-									// 	alt='sun'
-									// 	onClick={themeLight}
-									// />
+						{
+							isClient &&
+							<button>
+								{
+									theme === 'dark' &&
 									<Sun onClick={themeLight} />
-									:
-									// <Image
-									// 	src={'/moon.svg'}
-									// 	width={30}
-									// 	height={30}
-									// 	alt='sun'
-									// 	onClick={themeDark}
-									// />
+								}
+								{
+									theme === 'light' &&
 									<Moon onClick={themeDark} />
-							}
-
-						</button>
+								}
+							</button>
+						}
 
 						<button
 							type="button"

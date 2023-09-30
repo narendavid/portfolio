@@ -3,9 +3,10 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import Providers from '@/context/Providers'
-import Navbar from '@/components/Navbar'
+// import Navbar from '@/components/Navbar'
 import Head from 'next/head'
 import Footer from '@/components/Footer'
+import dynamic from 'next/dynamic'
 
 const inter = Montserrat({ subsets: ['latin'] })
 
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
 	title: 'narendev',
 	description: 'My projects',
 }
+
+const Navbar = dynamic(() => import('@/components/Navbar'))
+
 
 export default function RootLayout({
 	children,
