@@ -42,19 +42,18 @@ const Navbar = () => {
 						</h2>
 					</Link>
 					<div className="flex md:order-2">
-						{
-							isClient &&
-							<button>
-								{
-									theme === 'dark' &&
-									<Sun onClick={themeLight} />
-								}
-								{
-									theme === 'light' &&
-									<Moon onClick={themeDark} />
-								}
-							</button>
-						}
+
+						<button>
+							{
+								theme === 'dark' &&
+								<Sun onClick={themeLight} />
+							}
+							{
+								theme === 'light' &&
+								<Moon onClick={themeDark} />
+							}
+						</button>
+
 
 						<button
 							type="button"

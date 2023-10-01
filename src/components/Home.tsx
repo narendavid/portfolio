@@ -9,11 +9,11 @@ const Home = () => {
                     <p className="dark:text-gray-100 text-xl md:text-2xl xl:text-3xl">
                         Hi there!, I'm Naren Luna 👋
                     </p>
-                    <h2 className="text-2xl scale-110 sm:scale-100 sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary md:text-4xl xl:text-5xl">
-                        Frontend Developer
+                    <h2 className="text-2xl scale-110 sm:scale-100 sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-darkPrimary dark:from-lightPrimary to-info dark:to-info md:text-4xl xl:text-5xl">
+                        FullStack Developer
                     </h2>
                     <p className="dark:text-gray-100 text-xl md:text-2xl xl:text-3xl">
-                        That loves creating web apps.
+                        That loves creating web apps
                     </p>
                 </div>
             </div>
