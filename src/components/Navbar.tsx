@@ -29,6 +29,7 @@ const Navbar = () => {
 	};
 
 	useEffect(() => {
+		setTheme('dark')
 		setIsClient(true)
 	}, [])
 
@@ -42,18 +43,19 @@ const Navbar = () => {
 						</h2>
 					</Link>
 					<div className="flex md:order-2">
-
-						<button>
-							{
-								theme === 'dark' &&
-								<Sun onClick={themeLight} />
-							}
-							{
-								theme === 'light' &&
-								<Moon onClick={themeDark} />
-							}
-						</button>
-
+						{
+							isClient &&
+							<button>
+								{
+									theme === 'dark' &&
+									<Sun onClick={themeLight} />
+								}
+								{
+									theme === 'light' &&
+									<Moon onClick={themeDark} />
+								}
+							</button>
+						}
 
 						<button
 							type="button"
