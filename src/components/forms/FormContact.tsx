@@ -1,42 +1,40 @@
 "use client"
-import React, { useState } from 'react'
-
-const initialState: ContactFormData = {
-    email: '',
-    message: '',
-    name: ''
-}
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import Button from '../button/Button';
 
 const FormContact = () => {
 
-    const [formData, setFormData] = useState<ContactFormData>(initialState);
-
-    const { email, message, name } = formData
-
-    const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
-        console.log(formData)
-        setFormData({
-            ...formData,
-            [e.currentTarget.name]: e.currentTarget.value
-        })
-    }
-
-    const handleTextAreaChange = (e: React.FormEvent<HTMLTextAreaElement>) => {
-        console.log(formData)
-        setFormData({
-            ...formData,
-            [e.currentTarget.name]: e.currentTarget.value
-        })
+    const form = useRef<HTMLFormElement>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+  
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsLoading(true);
+        if (!form.current) return;
+        emailjs.sendForm(
+            process.env.NEXT_PUBLIC_SERVICE_ID || '',
+            process.env.NEXT_PUBLIC_TEMPLATE_ID || '',
+            form.current,
+            process.env.NEXT_PUBLIC_KEY || ''
+        )
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
     }
 
     return (
-        <form>
+        <form ref={form} id='form' onSubmit={sendEmail}>
             <div className="mb-6">
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                 <input
-                    value={name}
-                    onChange={handleInputChange}
-                    type="email"
+                    type="text"
                     name="name"
                     className="shadow-sm bg-gray-50 border border-info text-gray-900 text-sm rounded-lg focus:ring-info focus:border-info block w-full p-2.5 dark:bg-darkSecondary dark:placeholder-gray-400 dark:text-white dark:focus:ring-info dark:focus:border-info dark:shadow-sm-light"
                     placeholder="Your name"
@@ -46,8 +44,6 @@ const FormContact = () => {
             <div className="mb-6">
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                 <input
-                    value={email}
-                    onChange={handleInputChange}
                     type="email"
                     name="email"
                     className="shadow-sm bg-gray-50 border border-info text-gray-900 text-sm rounded-lg focus:ring-info focus:border-info block w-full p-2.5 dark:bg-darkSecondary dark:placeholder-gray-400 dark:text-white dark:focus:ring-info dark:focus:border-info dark:shadow-sm-light"
@@ -58,15 +54,13 @@ const FormContact = () => {
             <div className="mb-6">
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
                 <textarea
-                    value={message}
                     id="message"
                     name='message'
                     rows={4}
                     className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-info focus:ring-info focus:border-info dark:bg-darkSecondary dark:placeholder-gray-400 dark:text-white dark:focus:ring-info dark:focus:border-info" placeholder="Write me a message..."
-                    onChange={handleTextAreaChange}
                 ></textarea>
             </div>
-            <button type="submit" className="text-white w-full bg-info hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-info font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-info dark:hover:bg-info dark:focus:ring-blue-800">Send</button>
+            <Button isLoading={isLoading} />
         </form>
 
     )

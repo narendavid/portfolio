@@ -7,8 +7,8 @@ import Link from 'next/link';
 
 const Navbar = () => {
 
-	const { theme, setTheme } = useTheme()
-	const [isClient, setIsClient] = useState(false)
+	const { theme, setTheme } = useTheme();
+	const [isClient, setIsClient] = useState(false);
 
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -29,9 +29,9 @@ const Navbar = () => {
 	};
 
 	useEffect(() => {
-		setTheme('dark')
-		setIsClient(true)
-	}, [])
+		setTheme('dark');
+		setIsClient(true);
+	}, []);
 
 	return (
 		<header>
@@ -39,7 +39,7 @@ const Navbar = () => {
 				<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 					<Link href="#" className="flex items-center">
 						<h2 className="text-2xl scale-110 sm:scale-100 sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-info to-info">
-							{'<Narendev/>'}
+							{'<Narendev />'}
 						</h2>
 					</Link>
 					<div className="flex md:order-2">
@@ -59,7 +59,7 @@ const Navbar = () => {
 
 						<button
 							type="button"
-							className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+							className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden dark:text-gray-400"
 							aria-controls="navbar-sticky"
 							aria-expanded={isMenuOpen}
 							onClick={toggleMenu}

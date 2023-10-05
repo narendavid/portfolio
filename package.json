@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@nextui-org/react": "^2.1.13",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.6.1",
@@ -16,7 +17,8 @@
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "@types/node": "latest",

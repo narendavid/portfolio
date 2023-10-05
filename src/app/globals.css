@@ -5,3 +5,8 @@
 .title {
   @apply font-bold text-gray-700 text-4xl dark:text-white;
 }
+
+html{
+  scroll-behavior: smooth;
+  scroll-padding: 4rem;
+}
