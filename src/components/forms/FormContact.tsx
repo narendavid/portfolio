@@ -7,7 +7,8 @@ const FormContact = () => {
 
     const form = useRef<HTMLFormElement>(null);
     const [isLoading, setIsLoading] = useState<boolean>(false);
-  
+    const [responseText, setResponseText] = useState<string>('');
+
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
@@ -20,12 +21,17 @@ const FormContact = () => {
         )
             .then((response) => {
                 console.log(response)
+                setResponseText('OK')
             })
             .catch((error) => {
                 console.log(error)
+                setResponseText('Error')
             })
             .finally(() => {
                 setIsLoading(false)
+                setTimeout(()=>{
+                    setResponseText('')
+                }, 3000)
             })
     }
 
@@ -60,6 +66,13 @@ const FormContact = () => {
                     className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-info focus:ring-info focus:border-info dark:bg-darkSecondary dark:placeholder-gray-400 dark:text-white dark:focus:ring-info dark:focus:border-info" placeholder="Write me a message..."
                 ></textarea>
             </div>
+            {
+                responseText === 'OK' &&
+                <p className="block mb-6 text-center text-sm font-medium text-gray-900 dark:text-white">Enviado correctamente</p>
+            }{
+                responseText === 'error' &&
+                <p className="block text-center mb-6 text-sm font-medium text-red-600">Error al enviar</p>
+            }
             <Button isLoading={isLoading} />
         </form>
 

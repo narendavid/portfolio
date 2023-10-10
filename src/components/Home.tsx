@@ -1,10 +1,16 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Home = () => {
     return (
         <section id='home'>
             <div className="min-h-screen pt-20 flex flex-col items-center justify-center m-auto lg:flex-row-reverse lg:justify-evenly dark:bg-darkPrimary">
-                <img src="/me.png" alt="me" className='w-320' />
+                <Image
+                    src={'/me.png'}
+                    width={'600'}
+                    height={'600'}
+                    alt='me'
+                />
                 <div className="text-center lg:text-left">
                     <p className="dark:text-gray-100 text-xl md:text-2xl xl:text-3xl">
                         Hi there!, I'm Naren Luna 👋
