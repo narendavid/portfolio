@@ -5,7 +5,7 @@ const Work = () => {
         <section className="flex items-center justify-center bg-lightSecondary dark:bg-darkPrimary" id="work">
             <div className="flex flex-col gap-12 max-w-7xl w-5/6 pt-20 pb-20">
                 <div className="flex flex-col gap-3">
-                    <h2 className="title text-lg">Work<span className="text-info">.</span></h2>
+                    <h2 className="title"><span className="text-info">{'<'}</span>Work <span className="text-info">{'/>'}</span></h2>
                 </div>
             </div>
         </section>

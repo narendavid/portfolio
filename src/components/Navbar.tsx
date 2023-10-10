@@ -38,9 +38,7 @@ const Navbar = () => {
 			<nav className="shadow-lg backdrop-blur-lg fixed w-full z-20 top-0 left-0">
 				<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 					<Link href="#" className="flex items-center">
-						<h2 className="text-2xl scale-110 sm:scale-100 sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-info to-info">
-							{'<Narendev />'}
-						</h2>
+					<h2 className="title"><span className="text-info">{'<'}</span>Narendev <span className="text-info">{'/>'}</span></h2>
 					</Link>
 					<div className="flex md:order-2">
 						{

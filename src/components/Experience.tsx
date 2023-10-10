@@ -9,7 +9,7 @@ const Experience = () => {
             {
                 experiences.map((experience, index) => (
                     <li className="pb-3 sm:pb-4" key={index}>
-                        <div className="flex items-center space-x-4">
+                        <div className="flex space-x-4">
                             <div className="flex-shrink-0">
                                 <Image
                                     className='w-8 h-8 rounded-full'
@@ -23,15 +23,13 @@ const Experience = () => {
                                 <p className="text-sm font-medium text-gray-900 dark:text-white">
                                     {experience.company}
                                 </p>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">
-                                    <ul>
-                                        {
-                                            experience.descriptions.map((description, index) => (
-                                                <li>{description}</li>
-                                            ))
-                                        }
-                                    </ul>
-                                </p>
+                                <ul className="text-sm text-gray-500 dark:text-gray-400">
+                                    {
+                                        experience.descriptions.map((description, index) => (
+                                            <li key={index}>- {description}</li>
+                                        ))
+                                    }
+                                </ul>
                             </div>
                         </div>
                     </li>
