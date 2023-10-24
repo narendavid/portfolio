@@ -9,8 +9,22 @@ interface Favorite {
     description: string;
 }
 
-interface ContactFormData{
+interface ContactFormData {
     name: string;
-    email:string;
-    message:string;
+    email: string;
+    message: string;
+}
+
+interface Work {
+    title: string;
+    url: string;
+    image: string;
+    description: string;
+    repo: string;
+    techs?: Tech[];
+}
+
+interface Tech {
+    name: string;
+    image: string;
 }

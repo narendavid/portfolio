@@ -13,17 +13,17 @@ const Experience = () => {
                             <div className="flex-shrink-0">
                                 <Image
                                     className='w-8 h-8 rounded-full'
-                                    src={`/${experience.icon}`}
+                                    src={`/companies/${experience.icon}`}
                                     width={50}
                                     height={50}
                                     alt={experience.company}
                                 />
                             </div>
                             <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-gray-900 dark:text-white">
+                                <p className="text-md font-medium text-gray-900 dark:text-white">
                                     {experience.company}
                                 </p>
-                                <ul className="text-sm text-gray-500 dark:text-gray-400">
+                                <ul className="text-sm text-gray-500 dark:text-gray-300">
                                     {
                                         experience.descriptions.map((description, index) => (
                                             <li key={index}>- {description}</li>

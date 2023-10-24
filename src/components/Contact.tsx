@@ -7,12 +7,12 @@ import Location from './icons/Location'
 
 const Contact = () => {
     return (
-        <section className="items-center  bg-lightPrimary dark:bg-darkSecondary" id="contact">
+        <section className="items-center bg-lightPrimary dark:bg-darkSecondary" id="contact">
             <div className="max-w-7xl w-5/6 py-20 m-auto">
                 <h2 className="title"><span className="text-info">{'<'}</span>Contact <span className="text-info">{'/>'}</span></h2>
-                <div className="flex flex-col gap-10 justify-between">
-                    <div className="flex flex-col-reverse md:flex-row pt-10">
-                        <div className='m-auto pt-20 my-5 md:my-0'>
+                <div className="flex flex-col">
+                    <div className="flex flex-col-reverse md:flex-row pt-10 justify-around">
+                        <div className=' pt-20 my-5 md:my-0'>
                             <p className='subtitle'>I'll be glad to answer your questions</p>
                             <div className='flex flex-row my-2'>
                                 <Github />
@@ -31,7 +31,7 @@ const Contact = () => {
                                 <p className='ml-2'>Cartagena, Colombia</p>
                             </div>
                         </div>
-                        <div className='m-auto max-w-md w-full bg-lightPrimary dark:bg-darkPrimary p-10 rounded-lg shadow-lg'>
+                        <div className='max-w-md w-full bg-lightPrimary dark:bg-darkPrimary p-10 rounded-lg shadow-lg'>
                             <FormContact />
                         </div>
                     </div>

@@ -5,7 +5,6 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-
   ],
   theme: {
     extend: {
@@ -19,8 +18,8 @@ const config: Config = {
       darkPrimary: "#053B50",
       darkSecondary: "#176B87",
       info: "#64CCC5",
-      lightPrimary: "#F1F5F9",
-      lightSecondary: "#FFFFFF",
+      lightSecondary: "#F1F5F9",
+      lightPrimary: "#FFFFFF",
     },
   },
   plugins: [
