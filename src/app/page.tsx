@@ -8,7 +8,7 @@ const App = () => {
 		<main className="w-full">
 			<Home />
 			<About />
-			<Work />
+			{/* <Work /> */}
 			<Contact />
 		</main>
 	)

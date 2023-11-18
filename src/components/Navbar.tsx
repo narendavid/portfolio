@@ -104,7 +104,7 @@ const Navbar = () => {
 									About
 								</Link>
 							</li>
-							<li>
+							{/* <li>
 								<Link
 									href="#work"
 									className="block py-2 pl-3 pr-4 text-bgDark hover:text-info dark:md:hover:text-info md:p-0 dark:text-white dark:hover:text-white"
@@ -112,7 +112,7 @@ const Navbar = () => {
 								>
 									Work
 								</Link>
-							</li>
+							</li> */}
 							<li>
 								<Link
 									href="#contact"
