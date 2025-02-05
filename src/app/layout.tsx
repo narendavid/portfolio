@@ -3,10 +3,9 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import Providers from '@/context/Providers'
-// import Navbar from '@/components/Navbar'
 import Head from 'next/head'
-import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -23,7 +22,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<Head>
-				<link rel="shortcut icon" href="" />
+				<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 			</Head>
 			<body className={montserrat.className}>
 				<Providers>
